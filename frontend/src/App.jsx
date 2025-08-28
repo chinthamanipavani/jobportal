@@ -20,6 +20,7 @@ import Category from "./landing2/Category";
 import Resume from "./SeekerDashboard/Resume";
 import DevelopSkills from "./SeekerDashboard/DevelopSkills";
 import SetCareerGoals from "./SeekerDashboard/SetCareerGoals";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   const location = useLocation();
@@ -44,7 +45,7 @@ function App() {
         <Route path="/application" element={<ProtectedRoute><Applications /></ProtectedRoute>} />
         <Route path="/moredetails" element={<ProtectedRoute><MoreDetails /></ProtectedRoute>} />
         <Route path="/categories" element={<Category />} />
-        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+        <Route path="*" element={<PageNotFound/>} />
         <Route path="/alljobs" element={<ProtectedRoute><AllJobs /></ProtectedRoute>} />
         <Route path="/jobs" element={<ProtectedRoute><JobsPage /></ProtectedRoute>} />
         <Route path ='/resume' element={<ProtectedRoute><Resume/></ProtectedRoute>}/>
