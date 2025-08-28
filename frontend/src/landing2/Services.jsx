@@ -87,54 +87,55 @@ const Services = () => {
   margin: 0 auto;         /* ✅ Center the container */
 }
 
-        .services-header {
-          font-size: 2.5rem;
-          color: #2d3748;
-          margin-bottom: 0.5rem;
-        }
+.services-header {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
 
-        .services-subheader {
-          font-size: 1.1rem;
-          color: #4a5568;
-          margin-bottom: 2.5rem;
-        }
+.services-subheader {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 2.5rem;
+}
 
-      .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-    gap: 2rem;
-    padding: 0 1rem;
-  }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 2rem;
+  padding: 0 1rem;
+}
 
-        .service-card {
-          background: white;
-          border-radius: 1rem;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-          padding: 2rem 1.5rem;
-          opacity: 0;
-          transform: translateY(20px);
-        }
+.service-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-        .fade-in {
-          animation: fadeInUp 0.6s ease forwards;
-        }
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
 
-        .service-card .icon {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-        }
+.service-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-        .service-card h2 {
-          font-size: 1.3rem;
-          margin-bottom: 0.5rem;
-          color: #2b6cb0;
-        }
+.service-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2b6cb0;
+}
 
-        .service-card p {
-          font-size: 0.95rem;
-          color: #4a5568;
-        }
-          .testimonials-container {
+.service-card p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.testimonials-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -151,23 +152,36 @@ const Services = () => {
   text-align: center;
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-          @media (max-width: 992px) {
+@media (max-width: 992px) {
   .testimonial-card {
     width: 90%;
   }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-      `}</style>
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+  }
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+}
+        `}</style>
 
         <h1 className="services-header">Our Services</h1>
         <p className="services-subheader">

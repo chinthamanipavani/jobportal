@@ -42,6 +42,27 @@ const Animated = ({ id }) => {
 
   return (
     <div style={{ padding: "50px 20px", backgroundColor: "#f9f9f9" }} id={id}>
+      <style>{`
+        @media (max-width: 768px) {
+          .animated-flex-container {
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          .animated-image {
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 20px;
+          }
+          .animated-steps {
+            width: 100% !important;
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+          }
+          .animated-step-card {
+            padding: 15px !important;
+          }
+        }
+      `}</style>
       <h1
         style={{
           textAlign: "center",
@@ -51,10 +72,11 @@ const Animated = ({ id }) => {
           color: "blue",
         }}
       >
-     Land Your Dream Job
+        Land Your Dream Job
       </h1>
 
       <div
+        className="animated-flex-container"
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -68,6 +90,7 @@ const Animated = ({ id }) => {
           ref={imageRef}
           src={landing2}
           alt="process"
+          className="animated-image"
           style={{
             height: "400px",
             width: "45%",
@@ -83,6 +106,7 @@ const Animated = ({ id }) => {
 
         <div
           ref={stepsRef}
+          className="animated-steps"
           style={{
             width: "50%",
             display: "grid",
@@ -122,6 +146,7 @@ const Animated = ({ id }) => {
             <div
               key={i}
               onClick={step.onClick}
+              className="animated-step-card"
               style={{
                 background: "#fff",
                 padding: "20px",

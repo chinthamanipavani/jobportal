@@ -29,7 +29,7 @@ const SeekerLanding = () => {
 
   return (
     <>
-      <div style={styles.container}>
+      <div className="seeker-landing-container" style={styles.container}>
         <style>
           {`
           @keyframes slideFromTop {

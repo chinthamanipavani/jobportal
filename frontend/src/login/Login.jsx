@@ -82,11 +82,12 @@ const Login = () => {
       <div
         style={{
           minHeight: "100vh",
-          padding: "50px",
+          padding: "20px 10px",
           background: "linear-gradient(to bottom right, #e0f7fa, #e1bee7)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection: "column",
         }}
       >
         <div
@@ -101,6 +102,7 @@ const Login = () => {
         >
           {/* Form Section */}
           <div
+            className="login-form-container"
             ref={stepsRef}
             style={{
               transform: stepsVisible ? "translateX(0)" : "translateX(-100px)",
@@ -188,7 +190,7 @@ const Login = () => {
           </div>
 
           {/* Image Section */}
-          <div>
+          <div className="login-image-container">
             <img
               ref={imageRef}
               src={landing2}

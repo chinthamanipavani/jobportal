@@ -43,7 +43,6 @@
   }
 }
 
-
 /* 3 */
 .job-category {
   padding: 40px;
@@ -104,6 +103,7 @@
   font-size: 0.95rem;
   margin: 5px 0;
 }
+
 /* 4 */
 .process-section {
   padding: 40px;
@@ -172,8 +172,8 @@
 .step-card p {
   font-size: 1rem;
 }
-/* footer */
 
+/* footer */
 .footer {
   background-color: #000;
   padding: 40px 20px;
@@ -230,31 +230,6 @@
 .footer-column a:hover {
   color: #0d6efd;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* fetching jobs  */
 /* Base Styles */
@@ -376,24 +351,143 @@
   background-color: #0056b3;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .job-list {
-    grid-template-columns: repeat(2, 1fr);
+/* Media Queries */
+@media (max-width: 768px) {
+  .job-category h2 {
+    font-size: 1.5rem;
+  }
+
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 
-@media (max-width: 600px) {
-  .job-list {
-    grid-template-columns: 1fr;
-  }
+.register-background {
+  background-image: url('../images/landing2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-logos img {
+    width: 150px;
+    height: 150px;
+  }
+  .job-card img {
+    height: 120px;
+  }
+  .process-logo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-logos img {
+    width: 100px;
+    height: 100px;
+  }
+  .job-card img {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .seeker-landing-container,
+  .recruiter-landing-container {
+    height: 70vh;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .seeker-landing-container,
+  .recruiter-landing-container {
+    height: 50vh;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-form-container,
+  .register-form-container {
+    width: 70% !important;
+    max-width: 375px !important;
+    min-height: 400px !important;
+    padding: 15px !important;
+  }
+  .login-image-container img {
+    width: 400px !important;
+    height: 300px !important;
+  }
+  .login-image-container {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 20px;
+  }
+  .register-page-container {
+    padding: 10px !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-container,
+  .register-form-container {
+    width: 85% !important;
+    max-width: 350px !important;
+    min-height: 350px !important;
+    padding: 10px !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .login-image-container img {
+    width: 380px !important;
+    height: 390px !important;
+  }
+  .login-image-container {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 15px;
+  }
+  .register-page-container {
+    padding: 5px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
   .job-card {
     padding: 15px;
   }
+}
 
-  .apply-button, .official-button {
-    width: 100%;
-    text-align: center;
+@media (max-width: 480px) {
+  .job-list {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+  .job-card {
+    padding: 10px;
   }
 }

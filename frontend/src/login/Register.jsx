@@ -48,29 +48,20 @@ const Register = () => {
   return (
     <>
     <Navbar/>
-    <div
-      style={{
-        backgroundImage: `url(${landing2})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "20px",
-      }}
-    >
-      <form
-        onSubmit={handleRegister}
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.95)",
-          padding: "30px",
-          borderRadius: "12px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
-          width: "100%",
-          maxWidth: "450px",
-        }}
-      >
+    <div className="register-page-container">
+      <div className="register-background">
+        <form
+          className="register-form-container"
+          onSubmit={handleRegister}
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.95)",
+            padding: "15px 30px",
+            borderRadius: "12px",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+            width: "100%",
+            maxWidth: "475px",
+          }}
+        >
         <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Register</h2>
 
         <label htmlFor="name">Name:</label>
@@ -168,7 +159,8 @@ const Register = () => {
             Login here
           </a>
         </p>
-      </form>
+        </form>
+      </div>
     </div>
     </>
   );

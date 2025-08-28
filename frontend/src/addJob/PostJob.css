@@ -122,7 +122,6 @@ body {
   margin-right: 8px; /* space between checkbox and text */
 }
 
-
 /* ========================= */
 /* Tags Section */
 .tags-section {
@@ -167,4 +166,19 @@ body {
   color: #fff;
   border-color: transparent;
   font-weight: 600;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .post-job-container {
+    padding: 20px;
+  }
+
+  .post-job-container h2 {
+    font-size: 24px;
+  }
+
+  .post-job-form button {
+    font-size: 14px;
+  }
 }

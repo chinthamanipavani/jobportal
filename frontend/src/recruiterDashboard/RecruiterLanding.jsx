@@ -29,7 +29,7 @@ const RecruiterLanding = () => {
 
   return (
     <>
-      <div style={styles.container}>
+      <div className="recruiter-landing-container" style={styles.container}>
         <style>
           {`
           @keyframes slideFromTop {
