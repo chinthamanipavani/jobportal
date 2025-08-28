@@ -10,7 +10,7 @@ const BasicJobs = ({ id, searchTerm = "" }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/defaultJobs");
+        const res = await fetch("https://jobportal-0isa.onrender.com/defaultJobs");
         if (!res.ok) throw new Error("Error fetching data");
 
         const data = await res.json();

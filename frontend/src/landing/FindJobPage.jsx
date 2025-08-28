@@ -20,7 +20,7 @@ const FindJobPage = () => {
 
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/defaultJobs");
+        const response = await fetch("https://jobportal-0isa.onrender.com/defaultJobs");
 
         if (!response.ok) throw new Error("Error fetching data");
 

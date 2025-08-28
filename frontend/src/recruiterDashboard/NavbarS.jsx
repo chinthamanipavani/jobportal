@@ -9,7 +9,7 @@ const NavbarS = ({ searchTerm, setSearchTerm }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/defaultJobs");
+        const res = await fetch("https://jobportal-0isa.onrender.com/defaultJobs");
         if (!res.ok) throw new Error("Error fetching data");
 
         const data = await res.json();
@@ -69,7 +69,7 @@ const NavbarS = ({ searchTerm, setSearchTerm }) => {
             e.preventDefault();
             try {
               const email = localStorage.getItem("userEmail");
-              await fetch("http://localhost:3000/logout", {
+              await fetch("https://jobportal-0isa.onrender.com/logout", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),

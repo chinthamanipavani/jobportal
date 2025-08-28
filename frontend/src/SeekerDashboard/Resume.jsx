@@ -85,11 +85,14 @@ const Resume = () => {
     setShowPreview(true);
 
     try {
-      const response = await fetch("http://localhost:3000/api/resume/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://jobportal-0isa.onrender.com/api/resume/submit",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to save resume data");
 

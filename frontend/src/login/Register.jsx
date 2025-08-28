@@ -26,7 +26,7 @@ const Register = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-    const res = await fetch("http://localhost:3000/register", payload);
+    const res = await fetch("https://jobportal-0isa.onrender.com/register", payload);
     if (!res.ok) {
       const errorText = await res.text();
       console.error("Registration failed:", errorText);

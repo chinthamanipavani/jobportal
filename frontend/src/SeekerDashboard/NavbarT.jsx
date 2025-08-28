@@ -110,7 +110,7 @@ const NavbarT = ({ setSearchTerm }) => {
                 try {
                   const token = localStorage.getItem("token");
                   const email = localStorage.getItem("userEmail");
-                  await fetch("http://localhost:3000/logout", {
+                  await fetch("https://jobportal-0isa.onrender.com/logout", {
                     method: "DELETE",
                     headers: {
                       "Content-Type": "application/json",
