@@ -21,30 +21,7 @@ const Resume = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setShowPreview(true);
-
-  //   // Send data to the backend
-  //   try {
-  //     const response = await fetch("http://localhost:3000/api/resume/submit", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error("Failed to save resume data");
-  //     }
-
-  //     const data = await response.json();
-  //     console.log(data.message); // Success message
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
