@@ -1,35 +1,16 @@
 import React from "react";
+import "./SetCareerGoals.css";
 
 const SetCareerGoals = () => {
   return (
-    <div
-      style={{
-        padding: "30px",
-        maxWidth: "1200px",
-        margin: "0 auto",
-        lineHeight: "1.8",
-      }}
-    >
+    <div className="set-career-goals-container">
       {/* Top Section with Image + Intro */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "30px",
-          marginBottom: "40px",
-        }}
-      >
+      <div className="top-section">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSwaSbI6TlfPpFbOcnezXDN4kWZj8dKY7Lvg&s"
           alt="Career Goals"
-          style={{
-            width: "500px",
-            height: "400px",
-            objectFit: "cover",
-            borderRadius: "15px",
-          }}
         />
-        <div style={{ fontSize: "22px", fontWeight: "500", color: "#444" }}>
+        <div className="top-section-text">
           Personal goal-setting means defining <b>SMART objectives</b> that you
           want to achieve in your professional journey. Clear goals act like a
           roadmap — they give you <b>direction, focus, and motivation</b>. With
@@ -39,24 +20,13 @@ const SetCareerGoals = () => {
       </div>
 
       {/* Guidelines Section */}
-      <h2 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>
-        🎯 Set Your Career Goals
-      </h2>
+      <h2 className="guidelines-section-title">🎯 Set Your Career Goals</h2>
 
-      <div
-        style={{
-          background: "#f9f9ff",
-          border: "1px solid #ccc",
-          borderRadius: "10px",
-          padding: "25px",
-        }}
-      >
-        <h3 style={{ marginBottom: "20px", color: "#007bff" }}>
-          📌 Guidelines for Building Career Goals
-        </h3>
+      <div className="guidelines-section">
+        <h3>📌 Guidelines for Building Career Goals</h3>
 
         {/* 1 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>1. 🎯 Be Clear & Specific</h4>
           <p>
             Many people say, <em>“I want success”</em>, but success means
@@ -77,7 +47,7 @@ const SetCareerGoals = () => {
         </div>
 
         {/* 2 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>2. ⏳ Set a Realistic Timeline</h4>
           <p>
             A dream without a deadline is just a wish. If you say,{" "}
@@ -96,7 +66,7 @@ const SetCareerGoals = () => {
         </div>
 
         {/* 3 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>3. 🪜 Break Down Big Goals Into Small Steps</h4>
           <p>
             Large goals often feel overwhelming, but breaking them into smaller
@@ -121,7 +91,7 @@ const SetCareerGoals = () => {
         </div>
 
         {/* 4 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>4. ✅ Be Practical & Achievable</h4>
           <p>
             Ambition is good, but if your goals are too unrealistic, you may
@@ -140,7 +110,7 @@ const SetCareerGoals = () => {
         </div>
 
         {/* 5 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>5. 📊 Track & Measure Your Progress</h4>
           <p>What gets measured gets improved. Don’t just set goals — measure them.</p>
           <p>Ways to track:</p>
@@ -157,7 +127,7 @@ const SetCareerGoals = () => {
         </div>
 
         {/* 6 */}
-        <div style={{ marginBottom: "30px" }}>
+        <div className="guideline">
           <h4>6. 🔄 Stay Flexible & Adaptable</h4>
           <p>
             Life is unpredictable, and your interests may evolve over time.
@@ -174,15 +144,7 @@ const SetCareerGoals = () => {
       </div>
 
       {/* Final Motivation */}
-      <div
-        style={{
-          marginTop: "40px",
-          textAlign: "center",
-          fontSize: "20px",
-          fontWeight: "500",
-          color: "#222",
-        }}
-      >
+      <div className="final-motivation">
         ✨ <em>
           Remember, your career is a journey, not a single destination. Every
           small step brings you closer to the big dream!

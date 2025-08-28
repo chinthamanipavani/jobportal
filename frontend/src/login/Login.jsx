@@ -199,13 +199,13 @@ const Login = () => {
                 transform: imageVisible ? "translateX(0)" : "translateX(100px)",
                 opacity: imageVisible ? 1 : 0,
                 transition: "all 0.8s ease-out",
-                height: "500px",
-                width: "600px",
-                objectFit: "cover",
-                borderRadius: "12px",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-              }}
-            />
+            height: "350px",
+            width: "420px",
+            objectFit: "cover",
+            borderRadius: "12px",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+          }}
+        />
           </div>
         </div>
       </div>
