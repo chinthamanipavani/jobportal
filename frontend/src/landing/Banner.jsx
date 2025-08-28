@@ -28,33 +28,28 @@ const Banner = () => {
   return (
     <>
       <Navbar />
-      <div style={styles.banner}>
-        <div style={styles.bannerText}>
-          <h1 style={styles.heading}>
-            FIND YOUR <span style={styles.span}>DREAM JOB</span> WITH US
+      <div className="banner-container">
+        <div className="banner-text">
+          <h1>
+            FIND YOUR <span className="highlight">DREAM JOB</span> WITH US
           </h1>
-          <p style={styles.paragraph}>
+          <p>
             Good life begins with a good company — start exploring thousands of
             Jobs in one place.
           </p>
           <form>
-            {/* <input
-              type="search"
-              name="search"
-              placeholder="Search here"
-              style={styles.input}
-            /> */}
+
           </form>
         </div>
-        <div style={styles.bannerImage}>
-          <img src={langing1} alt="Banner" style={styles.image} />
+        <div className="banner-image">
+          <img src={langing1} alt="Banner" />
         </div>
       </div>
 
       {/* Company section with full browser width background */}
-      <div id="companies" style={styles.fullWidthBg}>
+      <div id="companies" style={{ width: "100vw", backgroundColor: "#f0f0f0" }}>
         <div className="company-section">
-          <h2>Trusted by 5000+ Companies</h2>
+          <h1 style={{color:"blue"}}>Trusted by 5000+ Companies</h1>
           <br />
           <div className="company-logos-wrapper">
             <div className="company-logos">
@@ -99,54 +94,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-const styles = {
-  banner: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "40px",
-    backgroundColor: "#f8f9fa",
-    flexWrap: "wrap",
-  },
-  span: {
-    color: "orange",
-  },
-  bannerText: {
-    flex: 1,
-    paddingRight: "20px",
-  },
-  heading: {
-    fontSize: "2.5rem",
-    color: "#343a40",
-    marginBottom: "20px",
-  },
-  paragraph: {
-    fontSize: "1.2rem",
-    marginBottom: "20px",
-  },
-  input: {
-    padding: "10px",
-    width: "100%",
-    maxWidth: "300px",
-    fontSize: "1rem",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-  },
-  bannerImage: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: "100%",
-    maxWidth: "500px",
-    height: "auto",
-    borderRadius: "10px",
-  },
-  fullWidthBg: {
-    width: "100vw",
-    backgroundColor: "#f0f0f0", // ✅ Your desired background color
-  },
-};
