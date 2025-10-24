@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../images/logo.jpg";
+import logo from "../images/logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img src={logo} alt="Logo" height="40" />
+            <img src={logo} alt="Logo" height="50" />
           </a>
 
           <button

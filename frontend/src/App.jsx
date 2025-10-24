@@ -34,23 +34,100 @@ function App() {
         <Route path="/home" element={<Banner />} />
         <Route path="/product" element={<Banner />} />
         <Route path="/findjob" element={<FindJobPage />} />
-        <Route path="/addjob" element={<ProtectedRoute><PostJob /></ProtectedRoute>} />
+        <Route
+          path="/addjob"
+          element={
+            <ProtectedRoute>
+              <PostJob />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/findEmployee" element={<FindEmployeePage />} />
         <Route path="/findCompany" element={<FindCompany />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/seeker" element={<ProtectedRoute><Seeker /></ProtectedRoute>} />
-        <Route path="/recruiter" element={<ProtectedRoute><Recruiter /></ProtectedRoute>} />
-        <Route path="/application" element={<ProtectedRoute><Applications /></ProtectedRoute>} />
-        <Route path="/moredetails" element={<ProtectedRoute><MoreDetails /></ProtectedRoute>} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/seeker"
+          element={
+            <ProtectedRoute>
+              <Seeker />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/recruiter"
+          element={
+            <ProtectedRoute>
+              <Recruiter />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/application"
+          element={
+            <ProtectedRoute>
+              <Applications />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/moredetails"
+          element={
+            <ProtectedRoute>
+              <MoreDetails />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/categories" element={<Category />} />
-        <Route path="*" element={<PageNotFound/>} />
-        <Route path="/alljobs" element={<ProtectedRoute><AllJobs /></ProtectedRoute>} />
-        <Route path="/jobs" element={<ProtectedRoute><JobsPage /></ProtectedRoute>} />
-        <Route path ='/resume' element={<ProtectedRoute><Resume/></ProtectedRoute>}/>
-        <Route path ='/developskills' element={<ProtectedRoute><DevelopSkills/></ProtectedRoute>}/>
-        <Route path ='/careergoals' element={<ProtectedRoute><SetCareerGoals/></ProtectedRoute>}/>
+        <Route path="*" element={<PageNotFound />} />
+        <Route
+          path="/alljobs"
+          element={
+            <ProtectedRoute>
+              <AllJobs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/jobs"
+          element={
+            <ProtectedRoute>
+              <JobsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/resume"
+          element={
+            <ProtectedRoute>
+              <Resume />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/developskills"
+          element={
+            <ProtectedRoute>
+              <DevelopSkills />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/careergoals"
+          element={
+            <ProtectedRoute>
+              <SetCareerGoals />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
 
       {location.pathname === "/" && <Footer />}

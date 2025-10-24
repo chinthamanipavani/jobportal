@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../images/logo.jpg";
+import logo from "../images/logo.png";
 import { Link as ScrollLink } from "react-scroll";
 
 const NavbarS = ({ searchTerm, setSearchTerm }) => {
