@@ -4,39 +4,103 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // Register
+// const register = async (req, res) => {
+//   try {
+//     console.log("Incoming data:", req.body);
+//     const { name, email, password, role } = req.body;
+
+//     if (!name || !email || !password) {
+//       return res.status(400).send("All fields are required");
+//     }
+//     if (!role || !["jobseeker", "recruiter"].includes(role)) {
+//       return res.status(400).send("Role must be either 'jobseeker' or 'recruiter'");
+//     }
+
+//     const isExist = await User.findOne({ email });
+//     if (isExist) {
+//       return res.status(400).send("User already exists");
+//     }
+
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const newUser = new User({
+//       name,
+//       email,
+//       password: hashedPassword,
+//       role,
+//     });
+
+//     await newUser.save();
+//     console.log("User saved successfully");
+//     res.status(201).send("User created");
+//   } catch (err) {
+//     console.error("Registration Error:", err.message);
+//     res.status(500).send("Server error: " + err.message);
+//   }
+// };
 const register = async (req, res) => {
   try {
-    console.log("Incoming data:", req.body);
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, phone } = req.body;
 
-    if (!name || !email || !password) {
+    // Required fields
+    if (!name || !email || !password || !phone) {
       return res.status(400).send("All fields are required");
     }
-    if (!role || !["jobseeker", "recruiter"].includes(role)) {
-      return res.status(400).send("Role must be either 'jobseeker' or 'recruiter'");
+
+    // Name validation
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name)) {
+      return res.status(400).send("Name must contain only letters");
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).send("Invalid email format");
+    }
+
+    // Phone validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      return res.status(400).send("Phone number must be 10 digits");
+    }
+
+    // Password validation
+    if (password.length < 6) {
+      return res
+        .status(400)
+        .send("Password must be at least 6 characters");
+    }
+
+    // Role validation
+    if (!["jobseeker", "recruiter"].includes(role)) {
+      return res.status(400).send("Invalid role");
+    }
+
+    // Check existing user
     const isExist = await User.findOne({ email });
     if (isExist) {
       return res.status(400).send("User already exists");
     }
 
+    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = new User({
       name,
       email,
       password: hashedPassword,
       role,
+      phone,
     });
 
     await newUser.save();
-    console.log("User saved successfully");
-    res.status(201).send("User created");
+    res.status(201).send("User created successfully");
+
   } catch (err) {
-    console.error("Registration Error:", err.message);
-    res.status(500).send("Server error: " + err.message);
+    res.status(500).send("Server error");
   }
 };
+
 
 // Login
 const login = async (req, res) => {

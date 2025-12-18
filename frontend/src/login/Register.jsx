@@ -14,39 +14,44 @@ const Register = () => {
     location: "",
   });
 
+  const validateForm = () => {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!nameRegex.test(data.name)) {
+      alert("Name should contain only letters");
+      return false;
+    }
+
+    if (!emailRegex.test(data.email)) {
+      alert("Invalid email format");
+      return false;
+    }
+
+    if (!phoneRegex.test(data.phone)) {
+      alert("Phone number must be exactly 10 digits");
+      return false;
+    }
+
+    if (data.password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
-  // const handleRegister = async (e) => {
-  //   e.preventDefault();
-  //   const payload = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(data),
-  //   };
-  //   const res = await fetch("https://jobportal-0isa.onrender.com/register", payload);
-  //   if (!res.ok) {
-  //     const errorText = await res.text();
-  //     console.error("Registration failed:", errorText);
-  //     alert("")
-  //     return;
-  //   }
-  //   alert("Registration successful");
-  //   navigate("/login")
-
-  //   setData({
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //     role: "jobseeker",
-  //     phone: "",
-  //     location: "",
-  //   });
-  // };
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    // ✅ FRONTEND VALIDATION
+    if (!validateForm()) return;
 
     try {
       const res = await fetch("https://jobportal-0isa.onrender.com/register", {
@@ -55,17 +60,13 @@ const Register = () => {
         body: JSON.stringify(data),
       });
 
-      const result = await res.text(); // backend sends plain text
-
+      const result = await res.text();
       if (!res.ok) {
-        // 👇 show backend message in alert
         alert(result || "Registration failed");
         return;
       }
 
       alert("Registration successful");
-      navigate("/login");
-
       setData({
         name: "",
         email: "",
@@ -74,9 +75,9 @@ const Register = () => {
         phone: "",
         location: "",
       });
+      navigate("/login");
     } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong. Try again.");
+      alert("Something went wrong");
     }
   };
 
